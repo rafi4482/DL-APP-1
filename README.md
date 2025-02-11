@@ -1,28 +1,45 @@
-# Vehicle Damange Detection App
+# 🚗 Vehicle Damage Detection App
 
-This app let's you drag and drop an image of a car and it will tell you what kind of damage it has.
-The model is trained on third quarter front and rare view hence the picture should capture the third quarter front or rare view of a car. 
+This **AI-powered web app** allows users to **drag and drop an image of a car** to automatically detect and classify vehicle damage.
 
-![app](app_screenshot.jpg)
+🛠 **Built with:** `Streamlit` | `PyTorch` | `ResNet50` | `Computer Vision`  
 
-### Model Details
-1. Used ResNet50 for transfer learning
-2. Model was trained on around 1700 images with 6 target classes
-   1. Front Normal
-   1. Front Crushed
-   1. Front Breakage
-   1. Rear Normal
-   1. Rear Crushed
-   1. Rear Breakage
-9. The accuracy on the validation set was around 80%
+🔍 **Model detects damage based on the third-quarter front and rear views of a car** for accurate classification.
 
-### Set Up
+---
 
-1. To get started, first install the dependencies using:
-    ```commandline
-     pip install -r requirements.txt
-    ```
-   
-2. Run the streamlit app:
-   ```commandline
-   streamlit run app.py
+## 📌 Features
+
+✅ **Drag & Drop Image Upload**  
+✅ **Instant AI-Powered Damage Classification**  
+✅ **6 Damage Categories**  
+✅ **User-Friendly Web Interface**  
+
+---
+
+![App Screenshot](app_screenshot.jpg)  
+
+---
+
+## 🎯 Model Details
+
+- **Architecture:** Transfer learning with **ResNet50**
+- **Dataset:** 2300 labeled images
+- **Training Details:**
+  - **Target Classes:**
+    1. 🟢 **Front Normal**
+    2. 🔴 **Front Crushed**
+    3. 🟡 **Front Breakage**
+    4. 🟢 **Rear Normal**
+    5. 🔴 **Rear Crushed**
+    6. 🟡 **Rear Breakage**
+  - **Validation Accuracy:** ~80%
+
+---
+
+## 🛠 Setup Instructions
+
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/your-username/vehicle-damage-detection.git
+   cd vehicle-damage-detection
