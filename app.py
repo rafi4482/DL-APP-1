@@ -21,7 +21,7 @@ if uploaded_file:
     image.save(img_bytes, format='JPEG')
     img_bytes = img_bytes.getvalue()
     
-    st.image(image, caption="Uploaded Image", use_container_width=True)
+    st.image(image, caption="Uploaded Image", use_column_width=True)
     
     with st.spinner("Analyzing Image...🔍"):
         prediction = predict(uploaded_file)
