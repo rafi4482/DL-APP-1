@@ -20,19 +20,18 @@ class CarClassifierResNet(nn.Module):
         for param in self.model.layer4.parameters():
             param.requires_grad = True
 
-            # Replace the final fully connected layer
+        # Replace the final fully connected layer
         self.model.fc = nn.Sequential(
             nn.Dropout(0.2),
             nn.Linear(self.model.fc.in_features, num_classes)
         )
 
     def forward(self, x):
-        x = self.model(x)
-        return x
+        return self.model(x)
 
 
-def predict(image_path):
-    image = Image.open(image_path).convert("RGB")
+def predict(image_file):
+    image = Image.open(image_file).convert("RGB")  # Fix file handling
     transform = transforms.Compose([
         transforms.Resize((224,224)),
         transforms.ToTensor(),
@@ -44,7 +43,7 @@ def predict(image_path):
 
     if trained_model is None:
         trained_model = CarClassifierResNet()
-        trained_model.load_state_dict(torch.load("model\saved_model.pth"))
+        trained_model.load_state_dict(torch.load("model/saved_model.pth", map_location=torch.device('cpu')))  # Fix path issue
         trained_model.eval()
 
     with torch.no_grad():
