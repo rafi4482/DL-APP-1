@@ -1,5 +1,5 @@
 streamlit==1.30.0
 Pillow==10.2.0
-torch==2.2.0+cpu
-torchvision==0.17.0+cpu
+torch==2.2.0
+torchvision==0.17.0
 
